@@ -5,145 +5,175 @@ local function getNil(name, class)
         end
     end
 end
+
 local drawerClickDetector = workspace.Drawer:FindFirstChild("ClickDetector")
 if drawerClickDetector and drawerClickDetector.Detector then
     drawerClickDetector.Detector:FireServer()
 else
     warn("Drawer ClickDetector or Detector not found.")
 end
+
 local pizzaSlicer = workspace.Drawer:FindFirstChild("Pizza Slicer")
 if pizzaSlicer and pizzaSlicer.ClickDetector and pizzaSlicer.ClickDetector.Detector then
     pizzaSlicer.ClickDetector.Detector:FireServer()
 else
     warn("Pizza Slicer ClickDetector or Detector not found.")
 end
+
 local animationStartedEvent = workspace.Animation:FindFirstChild("AnimationStarted")
 if animationStartedEvent then
-    local args = { "ToolHold" }
+    local args = { [1] = "ToolHold" }
     animationStartedEvent:FireServer(unpack(args))
 else
     warn("AnimationStarted event not found.")
 end
+
 if drawerClickDetector and drawerClickDetector.Detector then
     drawerClickDetector.Detector:FireServer()
-else
-    warn("Drawer ClickDetector or Detector not found (second fire).")
 end
-local boxClosedEvent = game:GetService("ReplicatedStorage"):FindFirstChild("BoxClosed")
-if boxClosedEvent then
-    local args = {
-        boxClosedEvent,
-        "Anchored",
-        true
-    }
-    game:GetService("ReplicatedStorage").Communication.Events:FindFirstChild("SpecificEventName"):FireServer(unpack(args))
+
+local communicationEvents = game:GetService("ReplicatedStorage").Communication.Events
+
+local args1 = {
+    [1] = game:GetService("ReplicatedStorage").BoxClosed,
+    [2] = "Anchored",
+    [3] = true
+}
+
+local event1 = communicationEvents:FindFirstChild("EventNameHere")
+if event1 then
+    event1:FireServer(unpack(args1))
 else
-    warn("BoxClosed event not found.")
+    warn("EventNameHere not found in Communication.Events.")
 end
-if boxClosedEvent then
-    local args = {
-        boxClosedEvent,
-        "CFrame",
-        CFrame.new(Vector3.new(74.5, 8.899999618530273, 10.5), Vector3.new(0, 0, -1))
-    }
-    game:GetService("ReplicatedStorage").Communication.Events:FindFirstChild("SpecificEventName"):FireServer(unpack(args))
+
+local args2 = {
+    [1] = game:GetService("ReplicatedStorage").BoxClosed,
+    [2] = "CFrame",
+    [3] = CFrame.new(Vector3.new(74.5, 8.9, 10.5), Vector3.new(0, 0, -1))
+}
+
+local event2 = communicationEvents:FindFirstChild("EventNameHere")
+if event2 then
+    event2:FireServer(unpack(args2))
 else
-    warn("BoxClosed event not found for CFrame.")
+    warn("EventNameHere not found in Communication.Events.")
 end
-if workspace.GameService:FindFirstChild("DraggingStarted") then
-    local args = { boxClosedEvent }
-    workspace.GameService.DraggingStarted:FireServer(unpack(args))
+
+local args3 = { [1] = game:GetService("ReplicatedStorage").BoxClosed }
+workspace.GameService.DraggingStarted:FireServer(unpack(args3))
+
+local boxClosedInstance = getNil("BoxClosed", "Part")
+local args4 = { [1] = boxClosedInstance }
+
+local event3 = communicationEvents:FindFirstChild("EventNameHere")
+if event3 then
+    event3:FireServer(unpack(args4))
 else
-    warn("DraggingStarted event not found in GameService.")
+    warn("EventNameHere not found in Communication.Events.")
 end
-local boxClosedPart = getNil("BoxClosed", "Part")
-if boxClosedPart then
-    local args = { boxClosedPart }
-    game:GetService("ReplicatedStorage").Communication.Events:FindFirstChild("SpecificEventName"):FireServer(unpack(args))
+
+local args5 = {
+    [1] = game:GetService("ReplicatedStorage").Pizza,
+    [2] = "Anchored",
+    [3] = true
+}
+
+local event4 = communicationEvents:FindFirstChild("EventNameHere")
+if event4 then
+    event4:FireServer(unpack(args5))
 else
-    warn("BoxClosed Part not found in nil instances.")
+    warn("EventNameHere not found in Communication.Events.")
 end
-local pizzaEvent = game:GetService("ReplicatedStorage"):FindFirstChild("Pizza")
-if pizzaEvent then
-    local args = {
-        pizzaEvent,
-        "Anchored",
-        true
-    }
-    game:GetService("ReplicatedStorage").Communication.Events:FindFirstChild("SpecificEventName"):FireServer(unpack(args))
+
+local args6 = {
+    [1] = game:GetService("ReplicatedStorage").Pizza,
+    [2] = "CFrame",
+    [3] = CFrame.new(Vector3.new(59.5, 2.8, 31.5), Vector3.new(0, 0, -1))
+}
+
+local event5 = communicationEvents:FindFirstChild("EventNameHere")
+if event5 then
+    event5:FireServer(unpack(args6))
 else
-    warn("Pizza event not found.")
+    warn("EventNameHere not found in Communication.Events.")
 end
-if pizzaEvent then
-    local args = {
-        pizzaEvent,
-        "CFrame",
-        CFrame.new(Vector3.new(59.5, 2.799999952316284, 31.5), Vector3.new(0, 0, -1))
-    }
-    game:GetService("ReplicatedStorage").Communication.Events:FindFirstChild("SpecificEventName"):FireServer(unpack(args))
+
+local args7 = { [1] = game:GetService("ReplicatedStorage").Pizza }
+workspace.GameService.DraggingStarted:FireServer(unpack(args7))
+
+local args8 = {
+    [1] = workspace.AllBox.BoxOpen,
+    [2] = game:GetService("ReplicatedStorage").Pizza
+}
+
+local event6 = communicationEvents:FindFirstChild("EventNameHere")
+if event6 then
+    event6:FireServer(unpack(args8))
 else
-    warn("Pizza event not found for CFrame.")
+    warn("EventNameHere not found in Communication.Events.")
 end
-if workspace.GameService:FindFirstChild("DraggingStarted") then
-    local args = { pizzaEvent }
-    workspace.GameService.DraggingStarted:FireServer(unpack(args))
+
+local args9 = {
+    [1] = workspace.AllBox.BoxOpen,
+    [2] = 16148
+}
+
+local event7 = communicationEvents:FindFirstChild("EventNameHere")
+if event7 then
+    event7:FireServer(unpack(args9))
 else
-    warn("DraggingStarted event not found for Pizza.")
+    warn("EventNameHere not found in Communication.Events.")
 end
-local boxOpen = workspace.AllBox:FindFirstChild("BoxOpen")
-if boxOpen and pizzaEvent then
-    local args = { boxOpen, pizzaEvent }
-    game:GetService("ReplicatedStorage").Communication.Events:FindFirstChild("SpecificEventName"):FireServer(unpack(args))
+
+local boxOpenInstance = getNil("BoxOpen", "UnionOperation")
+local args10 = { [1] = boxOpenInstance }
+
+local event8 = communicationEvents:FindFirstChild("EventNameHere")
+if event8 then
+    event8:FireServer(unpack(args10))
 else
-    warn("BoxOpen or Pizza event not found.")
+    warn("EventNameHere not found in Communication.Events.")
 end
-if boxOpen then
-    local args = { boxOpen, 16148 }
-    game:GetService("ReplicatedStorage").Communication.Events:FindFirstChild("SpecificEventName"):FireServer(unpack(args))
+
+local args11 = {
+    [1] = game:GetService("ReplicatedStorage").BoxClosed,
+    [2] = "Anchored",
+    [3] = true
+}
+
+local event9 = communicationEvents:FindFirstChild("EventNameHere")
+if event9 then
+    event9:FireServer(unpack(args11))
 else
-    warn("BoxOpen event not found for number.")
+    warn("EventNameHere not found in Communication.Events.")
 end
-local boxOpenUnion = getNil("BoxOpen", "UnionOperation")
-if boxOpenUnion then
-    local args = { boxOpenUnion }
-    game:GetService("ReplicatedStorage").Communication.Events:FindFirstChild("SpecificEventName"):FireServer(unpack(args))
+
+local args12 = { [1] = game:GetService("ReplicatedStorage").BoxClosed }
+workspace.GameService.DraggingStarted:FireServer(unpack(args12))
+
+local args13 = {
+    [1] = game:GetService("ReplicatedStorage").BoxClosed,
+    [2] = "CFrame",
+    [3] = CFrame.new(Vector3.new(68.2, 4.4, 4.9), Vector3.new(-1, 0, 0))
+}
+
+local event10 = communicationEvents:FindFirstChild("EventNameHere")
+if event10 then
+    event10:FireServer(unpack(args13))
 else
-    warn("BoxOpen UnionOperation not found in nil instances.")
+    warn("EventNameHere not found in Communication.Events.")
 end
-if boxClosedEvent then
-    local args = {
-        boxClosedEvent,
-        "Anchored",
-        true
-    }
-    game:GetService("ReplicatedStorage").Communication.Events:FindFirstChild("SpecificEventName"):FireServer(unpack(args))
+
+local args14 = {
+    [1] = workspace.AllBox.BoxClosed,
+    [2] = "Anchored",
+    [3] = false
+}
+
+local event11 = communicationEvents:FindFirstChild("EventNameHere")
+if event11 then
+    event11:FireServer(unpack(args14))
 else
-    warn("BoxClosed event not found for Anchored.")
-end
-if workspace.GameService:FindFirstChild("DraggingStarted") then
-    local args = { boxClosedEvent }
-    workspace.GameService.DraggingStarted:FireServer(unpack(args))
-else
-    warn("DraggingStarted event not found for BoxClosed.")
-end
-if boxClosedEvent then
-    local args = {
-        boxClosedEvent,
-        "CFrame",
-        CFrame.new(Vector3.new(68.1999740600586, 4.40000057220459, 4.900001525878906), Vector3.new(-1, 0, 0))
-    }
-    game:GetService("ReplicatedStorage").Communication.Events:FindFirstChild("SpecificEventName"):FireServer(unpack(args))
-else
-    warn("BoxClosed event not found for CFrame.")
-end
-local allBoxClosed = workspace.AllBox:FindFirstChild("BoxClosed")
-if allBoxClosed then
-    local args = {
-        allBoxClosed,
-        "Anchored",
-        false
-    }
-    game:GetService("ReplicatedStorage").Communication.Events:FindFirstChild("SpecificEventName"):FireServer(unpack(args))
-else
-    warn("AllBox BoxClosed not found.")
+    warn("EventNameHere not found in Communication.Events.")
 end
