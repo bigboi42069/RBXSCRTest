@@ -14,7 +14,7 @@ else
 end
 
 local pizzaSlicer = workspace.Drawer:FindFirstChild("Pizza Slicer")
-if pizzaSlicer and pizzaSlicer.ClickDetector and pizzaSlicer.ClickDetector.Detector then
+if pizzaSlicer and pizzaSlicer:FindFirstChild("ClickDetector") and pizzaSlicer.ClickDetector:FindFirstChild("Detector") then
     pizzaSlicer.ClickDetector.Detector:FireServer()
 else
     warn("Pizza Slicer ClickDetector or Detector not found.")
@@ -32,10 +32,10 @@ if drawerClickDetector and drawerClickDetector.Detector then
     drawerClickDetector.Detector:FireServer()
 end
 
-local communicationEvents = game:GetService("ReplicatedStorage").Communication.Events
+local communicationEvents = game:GetService("ReplicatedStorage"):FindFirstChild("Communication"):FindFirstChild("Events")
 
 local args1 = {
-    [1] = game:GetService("ReplicatedStorage").BoxClosed,
+    [1] = getNil("BoxClosed", "Part"),
     [2] = "Anchored",
     [3] = true
 }
@@ -48,7 +48,7 @@ else
 end
 
 local args2 = {
-    [1] = game:GetService("ReplicatedStorage").BoxClosed,
+    [1] = getNil("BoxClosed", "Part"),
     [2] = "CFrame",
     [3] = CFrame.new(Vector3.new(74.5, 8.9, 10.5), Vector3.new(0, 0, -1))
 }
@@ -60,7 +60,7 @@ else
     warn("BoxClosed not found in Communication.Events.")
 end
 
-local args3 = { [1] = game:GetService("ReplicatedStorage").BoxClosed }
+local args3 = { [1] = getNil("BoxClosed", "Part") }
 workspace.GameService.DraggingStarted:FireServer(unpack(args3))
 
 local boxClosedInstance = getNil("BoxClosed", "Part")
@@ -74,7 +74,7 @@ else
 end
 
 local args5 = {
-    [1] = game:GetService("ReplicatedStorage").Pizza,
+    [1] = getNil("Pizza", "Part"),
     [2] = "Anchored",
     [3] = true
 }
@@ -87,7 +87,7 @@ else
 end
 
 local args6 = {
-    [1] = game:GetService("ReplicatedStorage").Pizza,
+    [1] = getNil("Pizza", "Part"),
     [2] = "CFrame",
     [3] = CFrame.new(Vector3.new(59.5, 2.8, 31.5), Vector3.new(0, 0, -1))
 }
@@ -99,12 +99,12 @@ else
     warn("Pizza not found in Communication.Events.")
 end
 
-local args7 = { [1] = game:GetService("ReplicatedStorage").Pizza }
+local args7 = { [1] = getNil("Pizza", "Part") }
 workspace.GameService.DraggingStarted:FireServer(unpack(args7))
 
 local args8 = {
-    [1] = workspace.AllBox.BoxOpen,
-    [2] = game:GetService("ReplicatedStorage").Pizza
+    [1] = workspace.AllBox:FindFirstChild("BoxOpen"),
+    [2] = getNil("Pizza", "Part")
 }
 
 local event6 = communicationEvents:FindFirstChild("Pizza")
@@ -115,7 +115,7 @@ else
 end
 
 local args9 = {
-    [1] = workspace.AllBox.BoxOpen,
+    [1] = workspace.AllBox:FindFirstChild("BoxOpen"),
     [2] = 16148
 }
 
@@ -137,7 +137,7 @@ else
 end
 
 local args11 = {
-    [1] = game:GetService("ReplicatedStorage").BoxClosed,
+    [1] = getNil("BoxClosed", "Part"),
     [2] = "Anchored",
     [3] = true
 }
@@ -149,11 +149,11 @@ else
     warn("BoxClosed not found in Communication.Events.")
 end
 
-local args12 = { [1] = game:GetService("ReplicatedStorage").BoxClosed }
+local args12 = { [1] = getNil("BoxClosed", "Part") }
 workspace.GameService.DraggingStarted:FireServer(unpack(args12))
 
 local args13 = {
-    [1] = game:GetService("ReplicatedStorage").BoxClosed,
+    [1] = getNil("BoxClosed", "Part"),
     [2] = "CFrame",
     [3] = CFrame.new(Vector3.new(68.2, 4.4, 4.9), Vector3.new(-1, 0, 0))
 }
@@ -166,7 +166,7 @@ else
 end
 
 local args14 = {
-    [1] = workspace.AllBox.BoxClosed,
+    [1] = workspace.AllBox:FindFirstChild("BoxClosed"),
     [2] = "Anchored",
     [3] = false
 }
