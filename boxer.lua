@@ -40,11 +40,11 @@ local args1 = {
     [3] = true
 }
 
-local event1 = communicationEvents:FindFirstChild("EventNameHere")
+local event1 = communicationEvents:FindFirstChild("BoxClosed")
 if event1 then
     event1:FireServer(unpack(args1))
 else
-    warn("EventNameHere not found in Communication.Events.")
+    warn("BoxClosed not found in Communication.Events.")
 end
 
 local args2 = {
@@ -53,11 +53,11 @@ local args2 = {
     [3] = CFrame.new(Vector3.new(74.5, 8.9, 10.5), Vector3.new(0, 0, -1))
 }
 
-local event2 = communicationEvents:FindFirstChild("EventNameHere")
+local event2 = communicationEvents:FindFirstChild("BoxClosed")
 if event2 then
     event2:FireServer(unpack(args2))
 else
-    warn("EventNameHere not found in Communication.Events.")
+    warn("BoxClosed not found in Communication.Events.")
 end
 
 local args3 = { [1] = game:GetService("ReplicatedStorage").BoxClosed }
@@ -66,11 +66,11 @@ workspace.GameService.DraggingStarted:FireServer(unpack(args3))
 local boxClosedInstance = getNil("BoxClosed", "Part")
 local args4 = { [1] = boxClosedInstance }
 
-local event3 = communicationEvents:FindFirstChild("EventNameHere")
+local event3 = communicationEvents:FindFirstChild("BoxClosed")
 if event3 then
     event3:FireServer(unpack(args4))
 else
-    warn("EventNameHere not found in Communication.Events.")
+    warn("BoxClosed not found in Communication.Events.")
 end
 
 local args5 = {
@@ -79,11 +79,11 @@ local args5 = {
     [3] = true
 }
 
-local event4 = communicationEvents:FindFirstChild("EventNameHere")
+local event4 = communicationEvents:FindFirstChild("Pizza")
 if event4 then
     event4:FireServer(unpack(args5))
 else
-    warn("EventNameHere not found in Communication.Events.")
+    warn("Pizza not found in Communication.Events.")
 end
 
 local args6 = {
@@ -92,11 +92,11 @@ local args6 = {
     [3] = CFrame.new(Vector3.new(59.5, 2.8, 31.5), Vector3.new(0, 0, -1))
 }
 
-local event5 = communicationEvents:FindFirstChild("EventNameHere")
+local event5 = communicationEvents:FindFirstChild("Pizza")
 if event5 then
     event5:FireServer(unpack(args6))
 else
-    warn("EventNameHere not found in Communication.Events.")
+    warn("Pizza not found in Communication.Events.")
 end
 
 local args7 = { [1] = game:GetService("ReplicatedStorage").Pizza }
@@ -107,11 +107,11 @@ local args8 = {
     [2] = game:GetService("ReplicatedStorage").Pizza
 }
 
-local event6 = communicationEvents:FindFirstChild("EventNameHere")
+local event6 = communicationEvents:FindFirstChild("Pizza")
 if event6 then
     event6:FireServer(unpack(args8))
 else
-    warn("EventNameHere not found in Communication.Events.")
+    warn("Pizza not found in Communication.Events.")
 end
 
 local args9 = {
@@ -119,21 +119,21 @@ local args9 = {
     [2] = 16148
 }
 
-local event7 = communicationEvents:FindFirstChild("EventNameHere")
+local event7 = communicationEvents:FindFirstChild("BoxOpen")
 if event7 then
     event7:FireServer(unpack(args9))
 else
-    warn("EventNameHere not found in Communication.Events.")
+    warn("BoxOpen not found in Communication.Events.")
 end
 
 local boxOpenInstance = getNil("BoxOpen", "UnionOperation")
 local args10 = { [1] = boxOpenInstance }
 
-local event8 = communicationEvents:FindFirstChild("EventNameHere")
+local event8 = communicationEvents:FindFirstChild("BoxOpen")
 if event8 then
     event8:FireServer(unpack(args10))
 else
-    warn("EventNameHere not found in Communication.Events.")
+    warn("BoxOpen not found in Communication.Events.")
 end
 
 local args11 = {
@@ -142,11 +142,11 @@ local args11 = {
     [3] = true
 }
 
-local event9 = communicationEvents:FindFirstChild("EventNameHere")
+local event9 = communicationEvents:FindFirstChild("BoxClosed")
 if event9 then
     event9:FireServer(unpack(args11))
 else
-    warn("EventNameHere not found in Communication.Events.")
+    warn("BoxClosed not found in Communication.Events.")
 end
 
 local args12 = { [1] = game:GetService("ReplicatedStorage").BoxClosed }
@@ -158,11 +158,11 @@ local args13 = {
     [3] = CFrame.new(Vector3.new(68.2, 4.4, 4.9), Vector3.new(-1, 0, 0))
 }
 
-local event10 = communicationEvents:FindFirstChild("EventNameHere")
+local event10 = communicationEvents:FindFirstChild("BoxClosed")
 if event10 then
     event10:FireServer(unpack(args13))
 else
-    warn("EventNameHere not found in Communication.Events.")
+    warn("BoxClosed not found in Communication.Events.")
 end
 
 local args14 = {
@@ -171,9 +171,9 @@ local args14 = {
     [3] = false
 }
 
-local event11 = communicationEvents:FindFirstChild("EventNameHere")
+local event11 = communicationEvents:FindFirstChild("BoxClosed")
 if event11 then
     event11:FireServer(unpack(args14))
 else
-    warn("EventNameHere not found in Communication.Events.")
+    warn("BoxClosed not found in Communication.Events.")
 end
